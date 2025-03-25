@@ -2266,6 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4f841663daa484aa18662d1428c4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Chad
   level: 10
   curExp: 5
   maxExp: 10

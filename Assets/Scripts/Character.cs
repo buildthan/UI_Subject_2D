@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] private string name;
+    public string Name { get { return name; } set { name = value; } }
+
     [SerializeField] private int level;
     public int Level { get { return level; } set { level = value; } }
     
