@@ -21,8 +21,13 @@ public class UIInventory : BaseUI
 
         mainMenuButton.onClick.AddListener(OnClickMainMenuButton);
 
+    }
+
+    public void Start()
+    {
         items = new GameObject[GameManager.Instance.itemDatas.Count()]; //아이템 데이터를 받아와 생성
-        for(int i = 0; i< items.Length; i++)
+
+        for (int i = 0; i < items.Length; i++)
         {
             items[i] = Instantiate(itemSlotPrefab, this.transform.GetChild(0).GetChild(1).GetChild(0).GetChild(0));
             items[i].GetComponent<ItemSlot>().data = GameManager.Instance.itemDatas[i]; //아이템 슬롯 스크립트에 아이템 정보 삽입
@@ -33,7 +38,6 @@ public class UIInventory : BaseUI
         }
 
         UpdateInventory(); //인벤토리 아이템 장착여부를 따져줌
-
     }
 
     public void UpdateInventory()
