@@ -1,18 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
+public enum UIState
+{
+    MainMenu,
+    Status,
+    Inventory
+}
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    UIState currentState = UIState.MainMenu;
+
+    UIMainMenu mainMenuUI = null;
+    UIStatus statusUI = null;
+    UIInventory inventoryUI = null;
+
+    static UIManager instance;
+
+    public TextMeshProUGUI characterName;
+    public TextMeshProUGUI characterLevel;
+    public TextMeshProUGUI characterGold;
+    public TextMeshProUGUI characterExp;
+    public Image characterExpImage;
+
+
+    public static UIManager Instance
     {
-        
+        get
+        {
+            if (null == instance)
+            {
+                return null;
+            }
+            return instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            if (instance != this)
+                Destroy(this.gameObject);
+        }
+
+
+        mainMenuUI = GetComponentInChildren<UIMainMenu>(true);
+        mainMenuUI?.Init(this);
+        statusUI = GetComponentInChildren<UIStatus>(true);
+        statusUI?.Init(this);
+        inventoryUI = GetComponentInChildren<UIInventory>(true);
+        inventoryUI?.Init(this);
+
+
+        ChangeState(UIState.MainMenu);
+    }
+
+    public void FixedUpdate()
+    {
+        characterName.text = GameManager.Instance.character.Name;
+    }
+
+
+    public void ChangeState(UIState state) //UI오브젝트를 on off 해주는 기능
+    {
+        currentState = state; //아래에서 해당하는 UI오브젝트를 찾아 on off 해줌
+        mainMenuUI?.SetActive(currentState);
+        statusUI?.SetActive(currentState);
+        inventoryUI?.SetActive(currentState);
+
     }
 }
+
+

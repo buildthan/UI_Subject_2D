@@ -805,6 +805,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1525e539deb540048bd7eb404b1bff1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: {fileID: 138013173}
+  characterLevel: {fileID: 1103284191}
+  characterGold: {fileID: 340627337}
+  characterExp: {fileID: 98505227}
+  characterExpImage: {fileID: 2107016324}
 --- !u!1 &299087958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1075347820
 RectTransform:
   m_ObjectHideFlags: 0
