@@ -33,4 +33,30 @@ public class Character : MonoBehaviour
 
     [SerializeField] private int gold; //소지골드
     public int Gold { get { return gold; } set { gold = value; } }
+
+
+    public void EquipItem(float effect, ItemType type) //아이템 장착 매서드
+    {
+        if (type == ItemType.Weapon) //무기일 경우
+        {
+            Attack += effect;
+        }
+        else if (type == ItemType.Armor) //방어구일 경우
+        {
+            Deffense += effect;
+        }
+
+    }
+
+    public void UnEquipItem(float effect, ItemType type) //아이템 해제 매서드
+    {
+        if (type == ItemType.Weapon) //무기일 경우
+        {
+            Attack -= effect;   
+        }
+        else if (type == ItemType.Armor) //방어구일 경우
+        {
+            Deffense -= effect;
+        }
+    }
 }
