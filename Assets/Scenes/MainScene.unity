@@ -1400,7 +1400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &685665665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1434,6 +1434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3927a0f60c57e48988cc99ab6eded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackText: {fileID: 2136426865}
+  deffenseText: {fileID: 826540400}
+  healthText: {fileID: 1847421550}
+  criticalText: {fileID: 721988681}
+  MainMenuButton: {fileID: 1212208044}
 --- !u!1 &721988679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1075347820
 RectTransform:
   m_ObjectHideFlags: 0

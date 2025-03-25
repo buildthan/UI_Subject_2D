@@ -98,6 +98,13 @@ public class UIManager : MonoBehaviour
         ChangeState(UIState.Inventory);
     }
 
+    //Status ³»ºÎ
+
+    public void OnClickMainMenu()
+    {
+        ChangeState(UIState.MainMenu);
+    }
+
 }
 
 
