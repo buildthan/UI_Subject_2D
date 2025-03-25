@@ -2274,6 +2274,7 @@ MonoBehaviour:
   attack: 10
   deffense: 20
   critical: 35
+  gold: 10000
 --- !u!1 &1469724195
 GameObject:
   m_ObjectHideFlags: 0
