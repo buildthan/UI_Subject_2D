@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            if (null == instance)
+            if (null == instance) //½Ì±ÛÅæ ¼±¾ð °úÁ¤
             {
                 return null;
             }
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance == null) //½Ì±ÛÅæ ¼±¾ð °úÁ¤
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
