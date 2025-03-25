@@ -25,7 +25,8 @@ public class UIInventory : BaseUI
         for(int i = 0; i< items.Length; i++)
         {
             items[i] = Instantiate(itemSlotPrefab, this.transform.GetChild(0).GetChild(1).GetChild(0).GetChild(0));
-            items[i].GetComponent<ItemSlot>().data = GameManager.Instance.itemDatas[i];
+            items[i].GetComponent<ItemSlot>().data = GameManager.Instance.itemDatas[i]; //아이템 슬롯 스크립트에 아이템 정보 삽입
+            //이때 슬롯 스크립트에서 아이템 데이터에 변화를 주면 원본에도 영향을 줌. 주소만 옮겨가는 형식인거임.
             items[i].transform.GetChild(0).GetComponent<Image>().sprite =
                 GameManager.Instance.itemDatas[i].icon;
             GameManager.Instance.itemDatas[i].inventoryIndex = i; //인덱스 삽입용
