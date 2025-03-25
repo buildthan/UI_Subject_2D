@@ -2168,8 +2168,9 @@ GameObject:
   - component: {fileID: 1395799999}
   - component: {fileID: 1395799998}
   - component: {fileID: 1395800000}
+  - component: {fileID: 1395800001}
   m_Layer: 5
-  m_Name: CharacterImage
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2253,6 +2254,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1395800001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395799995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4f841663daa484aa18662d1428c4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 10
+  curExp: 5
+  maxExp: 10
+  curHealth: 100
+  maxHealth: 100
+  attack: 10
+  deffense: 20
+  critical: 35
 --- !u!1 &1469724195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,6 +2378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7224d89b18843ff4fb42ce25a45169dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1395800001}
 --- !u!4 &1506237001
 Transform:
   m_ObjectHideFlags: 0
