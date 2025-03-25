@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     public Image characterExpImage;
 
 
-    public static UIManager Instance
+    public static UIManager Instance //싱글톤 선언
     {
         get
         {
@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Awake() //싱글톤 선언
     {
 
 
@@ -70,7 +70,11 @@ public class UIManager : MonoBehaviour
     public void FixedUpdate()
     {
         characterName.text = GameManager.Instance.character.Name;
-    }
+        characterLevel.text = $"Lv. {GameManager.Instance.character.Level}";
+        characterExp.text = $"{GameManager.Instance.character.CurExp}/{GameManager.Instance.character.MaxExp}";
+        characterExpImage.fillAmount = GameManager.Instance.character.CurExp/GameManager.Instance.character.MaxExp;
+        characterGold.text = $"{GameManager.Instance.character.Gold}";
+}
 
 
     public void ChangeState(UIState state) //UI오브젝트를 on off 해주는 기능
@@ -81,6 +85,19 @@ public class UIManager : MonoBehaviour
         inventoryUI?.SetActive(currentState);
 
     }
+
+    //MainMenu 내부
+
+    public void OnClickStatus()
+    {
+        ChangeState(UIState.Status);
+    }
+
+    public void OnClickInventory()
+    {
+        ChangeState(UIState.Inventory);
+    }
+
 }
 
 
