@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +27,13 @@ public class UIInventory : BaseUI
 
     public void Start()
     {
-        items = new GameObject[GameManager.Instance.itemDatas.Count()]; //아이템 데이터를 받아와 생성
+        try
+        {
+            items = new GameObject[GameManager.Instance.itemDatas.Count()]; //아이템 데이터를 받아와 생성
+        }catch(NullReferenceException e)
+        {
+            Debug.Log("인벤토리 불러오기 실패");
+        }
 
         for (int i = 0; i < items.Length; i++)
         {

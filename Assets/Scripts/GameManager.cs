@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -35,7 +36,13 @@ public class GameManager : MonoBehaviour
                 Destroy(this.gameObject);
         }
 
-        itemDatas = Resources.LoadAll<ItemData>("Items");
+        try //예외처리 입니다.
+        {
+            itemDatas = Resources.LoadAll<ItemData>("Items");
+        }catch(NullReferenceException e)
+        {
+            Debug.Log("아이템 정보 불러오기 실패");
+        }
         
         for(int i=0; i<itemDatas.Length; i++)
         {
